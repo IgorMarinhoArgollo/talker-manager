@@ -36,6 +36,9 @@
     "dotenv": "^16.0.1",
     "eslint-config-trybe-backend": "^1.0.4",
     "express": "^4.18.1",
+    "express-rate-limit": "^6.5.1",
+    "express-rescue": "^1.1.32",
+    "helmet": "^5.1.1",
     "nodemon": "^2.0.19"
   }
 }
