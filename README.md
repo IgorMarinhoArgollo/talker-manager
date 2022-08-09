@@ -1,11 +1,11 @@
 # talker-manager
 
 <p>
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/igormarinhoargollo/talker-manager?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorMarinhoArgollo/talker-manager?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormarinhoargollo/talker-manager">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorMarinhoArgollo/talker-manager">
   
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/talker-manager">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorMarinhoArgollo/talker-manager">
     
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    
