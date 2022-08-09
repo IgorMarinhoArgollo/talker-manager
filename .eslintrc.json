@@ -4,10 +4,11 @@
         "es2021": true,
         "node": true
     },
-    "extends": "trybe-backend",
+    "extends": "airbnb",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
+      "consistent-return": "off"
     }
 }

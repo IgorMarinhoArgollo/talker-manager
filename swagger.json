@@ -1,0 +1,617 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Talker Manager Educational Project",
+    "description": "This is an eductional project to practice the use of Express on a backend application. It was developed with Express and Node using JS. This project was developed during the Backend Module of Trybe Course",
+    "version": "1.0.0",
+    "contact": {
+      "email": "igormarinhoargollo@gmail.com"
+    }
+  },
+  "server": {
+    "url": "http://localhost:3000",
+    "description": "API"
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "User Login",
+        "description": "This route is responsible for user login returning a 16 digits authorization token",
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              },
+              "examples": {
+                "user": {
+                  "value": {
+                    "email": "email@email.com",
+                    "password": "12345678"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid fields - 'The field \"email\" is required' or 'The field \"password\" is required' or 'The \"password\" mus be longer or equal to 6 characters' or 'The \"email\" must follow the structure: \"email@email.com\"'"
+          },
+          "200": {
+            "description": "Successful login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Token"
+                },
+                "examples": {
+                  "token": {
+                    "value": {
+                      "token": "qwertyuiopasdfgh"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/talker": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Get All Talkers",
+        "description": "This route is responsible for getting all Talkers if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "responses": {
+          "200": {
+            "description": "All Talkers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talker"
+                  }
+                },
+                "examples": {
+                  "talkers": {
+                    "value": [
+                      {
+                        "name": "Henrique Albuquerque",
+                        "age": 62,
+                        "id": 1,
+                        "talk": {
+                          "watchedAt": "23/10/2020",
+                          "rate": 5
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Talker creation route",
+        "description": "This route is responsible for creating a new Talker on the database if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TalkerToBeCreated"
+              },
+              "examples": {
+                "user": {
+                  "value": {
+                    "name": "Henrique Albuquerque",
+                    "age": 62,
+                    "talk": {
+                      "watchedAt": "23/10/2020",
+                      "rate": 5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created Talker",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Talker"
+                },
+                "example": {
+                  "name": "Henrique Albuquerque",
+                  "age": 62,
+                  "id": 1,
+                  "talk": {
+                    "watchedAt": "23/10/2020",
+                    "rate": 5
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/talker/{id}": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Get Talker By Id",
+        "description": "This route is responsible for getting a Talker by Id if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "description": "Id to get",
+          "required": "true"
+        }],
+        "responses": {
+          "200": {
+            "description": "Found Talker",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Talker"
+                },
+                "example": {
+                  "name": "Henrique Albuquerque",
+                  "age": 62,
+                  "id": 1,
+                  "talk": {
+                    "watchedAt": "23/10/2020",
+                    "rate": 5
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Talker not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Talker not found"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Update an Existing Talker",
+        "description": "This route is responsible for updating an existing Talker on the database if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to update",
+            "required": "true"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TalkerToBeCreated"
+              },
+              "examples": {
+                "user": {
+                  "value": {
+                    "name": "Henrique Albuquerque",
+                    "age": 62,
+                    "talk": {
+                      "watchedAt": "23/10/2020",
+                      "rate": 5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Talker Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Talker"
+                },
+                "example": {
+                  "name": "Henrique Albuquerque",
+                  "age": 62,
+                  "id": 1,
+                  "talk": {
+                    "watchedAt": "23/10/2020",
+                    "rate": 5
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Talker not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Talker not found"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Field - 'The field \"name\" is required' or 'The \"name\" must be longer or equal to 3 characters' or 'The field \"age\" is required' or 'Talker must be over the legal age' or 'The field \"talk\" is required' or 'The field \"rate\" is required' or 'The field \"rate\" must be an integer between 1 and 5' or 'The field \"watchedAt\" is required' or 'The field \"watchedAt\" must follow the structure: \"dd/mm/aaaa\"'.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Invalid field"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Delete an Existing Talker",
+        "description": "This route is responsible for deleting an existing Talker on the database if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to delete",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Talker Deleted"
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Talker not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Talker not found"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Field - 'The field \"name\" is required' or 'The \"name\" must be longer or equal to 3 characters' or 'The field \"age\" is required' or 'Talker must be over the legal age' or 'The field \"talk\" is required' or 'The field \"rate\" is required' or 'The field \"rate\" must be an integer between 1 and 5' or 'The field \"watchedAt\" is required' or 'The field \"watchedAt\" must follow the structure: \"dd/mm/aaaa\"'.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Invalid field"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/talker/search": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Get Talker By Name or Part of the Name",
+        "description": "This route is responsible for getting a Talker by name if there is an authorization token on the head of the request",
+        "tags": [
+          "Talkers"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Name to get",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found Talker",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talker"
+                  }
+                },
+                "example": [{
+                  "name": "Henrique Albuquerque",
+                  "age": 62,
+                  "id": 1,
+                  "talk": {
+                    "watchedAt": "23/10/2020",
+                    "rate": 5
+                  }
+                }]
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token - 'Token not found' or 'Invalid Token'",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Token not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "required": "true"
+          },
+          "password": {
+            "type": "string",
+            "required": "true"
+          }
+        }
+      },
+      "Token": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "Talker": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "talk": {
+            "type": "object",
+            "properties": {
+              "watchedAt": {
+                "type": "string"
+              },
+              "rate": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "TalkerToBeCreated": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "talk": {
+            "type": "object",
+            "properties": {
+              "watchedAt": {
+                "type": "string"
+              },
+              "rate": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
