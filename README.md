@@ -11,7 +11,7 @@
    
 <details>
   <summary><h2>:brazil: Português</h2></summary>
-  O Talker Manager Project é a parcela backend de um gerenciador de palestrantes que foi desenvolvido com fins educacionais no módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe. <br> Apesar de ainda não ter sido usado um banco de dados relacionais, utilizou-se no seu desenvolvimento o node.js junto com o ExpressJS para se estruturar as rotas e tratar as requisições.<br><br>
+  O Talker Manager Project é a parcela backend de um gerenciador de palestrantes que foi desenvolvido com fins educacionais no módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe. <br> Apesar de ainda não ter sido usado um banco de dados relacionais, utilizou-se o módulo fs no seu desenvolvimento, o node.js junto com o ExpressJS para se estruturar as rotas e tratar as requisições.<br><br>
   
   ## Live Link
   <a href="https://talkermanager.herokuapp.com/api-docs/">Documentação do Projeto</a><br><br>
@@ -98,10 +98,10 @@
   
   ##  
   ## :us: English
-The Talker Manager Project is the backend portion of a talker manager that was developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe. <br> Although a relational database has not yet been used, node.js was used in its development along with ExpressJS to structure routes and handle requests.<br><br>
+The Talker Manager Project is the backend portion of a talker manager that was developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe. <br> Although a relational database has not yet been used, node.js was used in its development along with fs module and ExpressJS to structure routes and handle requests.<br><br>
 
 ## Live Link
-<a href="https://talkermanager.herokuapp.com/api-docs/">Documentação do Projeto</a><br><br>
+<a href="https://talkermanager.herokuapp.com/api-docs/">Documentation of Project</a><br><br>
   
 ## My Goals
 * Develop the Backend of a speaker manager;
