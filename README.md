@@ -41,7 +41,11 @@
   
     git clone git@github.com:IgorMarinhoArgollo/talker-manager.git
     
-    
+  ### Crie o arquivo .env na pasta talker-manager
+  Chaves que devem ser inseridas:
+  
+    PORT=3000
+
   ### Rodar Localmente
   #### Requisitos:
    * node.js
@@ -127,7 +131,12 @@ The Talker Manager Project is the backend portion of a talker manager that was d
   
     git clone git@github.com:IgorMarinhoArgollo/talker-manager.git
     
-    
+  ### Create the .env file on talker-manager file
+  Keys that must be included:
+  
+    PORT=3000
+
+
   ### Running Locally
   #### Requirements:
    * node.js
