@@ -11,9 +11,9 @@
    
 <details>
   <summary><h2>:us: English</h2></summary>
-  ##  
-  ## :us: English
-The Talker Manager Project is the backend portion of a speaker manager that was developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe. <br> Considering that this project is an initial project for studying backend practices, it does not yet implement a relational database. Instead, it works with a file-based database with the support of the fs module.<br><br>
+  
+The Talker Manager Project is the backend portion of a speaker manager that was developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe. <br><br> **Considering that this project is an initial project for studying backend practices, it does not yet implement a relational database. Instead, it works with a file-based database with the support of the fs module.**<br><br>
+  
 ## Live Link
 <a href="https://talkermanager.herokuapp.com/api-docs/">Documentation of Project</a><br><br>
   
@@ -105,7 +105,9 @@ The Talker Manager Project is the backend portion of a speaker manager that was 
   This project is under license:
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"><br><br>
 </details>
-  O Talker Manager Project é a parcela backend de um gerenciador de palestrantes que foi desenvolvido com fins educacionais no módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe. <br> __Considerando que esse projeto é um projeto inicial para o estudo de práticas do backend, este projeto ainda não implementa um banco de dados relacional, ele trabalha com um banco de dados em formato de arquivo, com o apoio do módulo fs.__<br><br>
+
+O Talker Manager Project é a parcela backend de um gerenciador de palestrantes que foi desenvolvido com fins educacionais no módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe.<br><br>
+**Considerando que esse projeto é um projeto inicial para o estudo de práticas do backend, este projeto ainda não implementa um banco de dados relacional, ele trabalha com um banco de dados em formato de arquivo, com o apoio do módulo fs.**<br><br>
   
   ## Live Link
   <a href="https://talkermanager.herokuapp.com/api-docs/">Documentação do Projeto</a><br><br>
