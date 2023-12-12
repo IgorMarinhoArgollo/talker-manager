@@ -25,6 +25,12 @@ The Talker Manager Project is the backend portion of a speaker manager developed
 <a href="https://talker-manager-nles.onrender.com">Base</a><br>
 <a href="https://talker-manager-nles.onrender.com/api-docs">Docs</a><br><br>
 
+### Rotas / Routes
+![Routes](./assets/rotas.png)
+
+<br />
+
+
 ### :dart: Objetivos / Goals
 - :white_check_mark: **Desenvolver o backend de um gerenciador de palestrantes / Develop the backend for a speaker management system;**
 - :white_check_mark: Implementar rota de login de usuários / Login route implementation;
@@ -83,6 +89,35 @@ The Talker Manager Project is the backend portion of a speaker manager developed
     docker-compose up
 
 <br/>
+
+### Imagens / Images
+- /login (POST)
+![Login](./assets/login.png)
+<br />
+
+- /talker (GET)
+![getAll](./assets/getall.png)
+<br />
+
+- /talker/{id} (GET)
+![getById](./assets/getbyid.png)
+<br />
+
+- /talker/search (GET)
+![getByParam](./assets/getbyname.png)
+<br />
+
+- /talker (POST)
+![create](./assets/post.png)
+<br />
+
+- /talker/{id} (PUT)
+![update](./assets/put.png)
+<br />
+
+- /talker/{id} (DELETE)
+![delete](./assets/delete.png)
+<br />
 
 ### :technologist: Author / Autor
 <a href="https://www.linkedin.com/in/igormarinhoargollo/">
