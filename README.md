@@ -61,6 +61,7 @@ The Talker Manager Project is the backend portion of a speaker manager developed
   
     PORT=3000
 <br/>
+
   #### 3 Opções para rodar(escolher 3.1 ou 3.2) / Options to run(choose between option 3.1 and 3.2)
   ##### 3.1 Rodando Localmente / Running Locally
   ###### Requerimentos / Requirements:
