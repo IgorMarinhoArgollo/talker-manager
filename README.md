@@ -1,4 +1,4 @@
-# talker-manager
+# Talker Manager (API de Gerenciamento de Palestrantes / Speaker Management API)
 
 <p>
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorMarinhoArgollo/talker-manager?color=%2304D361">
@@ -8,196 +8,90 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorMarinhoArgollo/talker-manager">
     
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  </p>
    
-<details>
-  <summary><h2>:us: English</h2></summary>
-  
-The Talker Manager Project is the backend portion of a speaker manager that was developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe. <br><br> **Considering that this project is an initial project for studying backend practices, it does not yet implement a relational database. Instead, it works with a file-based database with the support of the fs module.**<br><br>
-  
-## Live Link
-<a href="https://talkermanager.herokuapp.com/api-docs/">Documentation of Project</a><br><br>
-  
-## My Goals
-* Develop the Backend of a speaker manager;
-* Implement a Login route;
-* Implement routes with queries to the database file;
-* Adopt good practices from a security point of view using: Helmet and Rate-Limit;
-* Preparation of documentation with Swagger;
-* Configuration of Docker files to run the software.<br><br>
+O Talker Manager Project representa a essência do backend em um gerenciador de palestrantes criado com propósitos educacionais durante o módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe.
 
-## Used Technologies
-  * node.js
-  * Express Js
-  * Docker
+**É importante notar que este projeto, sendo uma introdução às práticas de backend, não incorpora um banco de dados relacional. Em vez disso, utiliza um banco de dados em formato de arquivo, com o suporte do módulo fs.**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+The Talker Manager Project is the backend portion of a speaker manager developed for educational purposes in the Backend module of the Full Stack Web Development Course at Trybe.
+
+**It's worth noting that this project, serving as an initial exploration of backend practices, does not implement a relational database. Instead, it operates with a file-based database, supported by the fs module.**
+<br>
+<br/>
+  
+### :earth_americas: Links
+<a href="https://talker-manager-nles.onrender.com">Base</a><br>
+<a href="https://talker-manager-nles.onrender.com/api-docs">Docs</a><br><br>
+
+### :dart: Objetivos / Goals
+- :white_check_mark: **Desenvolver o backend de um gerenciador de palestrantes / Develop the backend for a speaker management system;**
+- :white_check_mark: Implementar rota de login de usuários / Login route implementation;
+- :white_check_mark: Criar rotas que interajam com o arquivo do banco de dados / Create routes to interact with the database file;
+- :white_check_mark: Reforçar segurança com práticas como Helmet e Rate-Limit / Enhance security through practices such as Helmet and Rate-Limit;
+- :white_check_mark: Preparar documentação utilizando Swagger / Prepare documentation using Swagger;
+- :white_check_mark: Configurar Docker para execução do software / Configure Docker for software execution.<br><br>
+
+### :computer: Tecnologias Utilizadas / Used Technologies
+  * <img alt="node" src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  * <img alt="express" src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" />
+  * <img alt="docker" src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" />
+  * <img alt="swagger" src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white" />
   * Helmet
   * Rate-Limit
-  * Swagger
-  * Módulo FS<br><br>
-    
-## How to Run
-      
-  ### 1 Clone the repository on your computer (via SSH)
-  On terminal:
+  * FS Module<br><br>
+
+### :gear: Como Rodar / How to Run
+  #### 1 Clone o repositório (via SSH) / Clone the repository (via SSH)
+  No terminal / On terminal:
   
     git clone git@github.com:IgorMarinhoArgollo/talker-manager.git
-    
-  ### 2 Create the .env file on talker-manager file
-  Keys that must be included:
+  
+  <br/>
+  
+  #### 2 Criar .env na pasta / Create .env file on folder
+  Chaves que devem ser incluídas / Keys that must be included:
   
     PORT=3000
-
-  ### 3 Options to run
-  ### 3.1 Running Locally
-  #### Requirements:
+<br/>
+  #### 3 Opções para rodar(escolher 3.1 ou 3.2) / Options to run(choose between option 3.1 and 3.2)
+  ##### 3.1 Rodando Localmente / Running Locally
+  ###### Requerimentos / Requirements:
    * node.js
   
-  #### Iniciando o projeto localmente
-  No terminal:
-  
-    npm run dev
-
-  #### Starting the project locally
-  On terminal:
-  
-    npm run dev
-
-      
-  ### 3.2 Running on Container
-  #### Requirements:
-   * Docker
-   * Docker-compose
-  
-  #### Starting the project on Docker
-  On terminal:
-  
-    docker-compose up
-
-
-## Routes
-  See more details on documentation available on route: 
-  
-  * GET /api-docs
-  ------------------------
-  * POST /login
-  * GET /talker
-  * GET /talker/:id
-  * GET /talker/search?q=
-  * POST /talker
-  * PUT /talker/:id
-  * DELETE /talker/:id
-  
-  
-## How to contribute on the project
-  1. Make a **fork** of the project;
-  2. Create a new branch with your changes: `git checkout -b my-feature`;
-  3. Save your changes and create a commit message explaining what you have done: `git commit -m "feature: My new feature"`;
-  4. Send your changes: `git push origin my-feature`;
-  5. Open your pull-request on GitHub.<br><br>
-
-##  Author
-<a href="https://www.linkedin.com/in/igormarinhoargollo/">
- <img style="border-radius:300px;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Igor Marinho Argollo</b></sub></a> <a href="https://www.linkedin.com/in/igormarinhoargollo/"></a>
- <br />
-  
-## License
-  This project is under license:
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"><br><br>
-</details>
-
-O Talker Manager Project é a parcela backend de um gerenciador de palestrantes que foi desenvolvido com fins educacionais no módulo de Backend do Curso de Desenvolvimento Web Full Stack na Trybe.<br><br>
-**Considerando que esse projeto é um projeto inicial para o estudo de práticas do backend, este projeto ainda não implementa um banco de dados relacional, ele trabalha com um banco de dados em formato de arquivo, com o apoio do módulo fs.**<br><br>
-  
-  ## Live Link
-  <a href="https://talkermanager.herokuapp.com/api-docs/">Documentação do Projeto</a><br><br>
-  
-  ## Objetivos
-  * Elaborar o Backend de um gerenciador de palestrantes;
-  * Implementar uma rota de Login;
-  * Implementar rotas com consultas ao arquivo do banco de dados;
-  * Adotar boas práticas do ponto de vista de segurança usando: Helmet e Rate-Limit;
-  * Elaboração de documentação com o Swagger;
-  * Configuração de arquivos Docker para rodar o software.<br><br>
-  
-  ## Tecnologias usadas
-  * node.js
-  * Express Js
-  * Docker
-  * Helmet
-  * Rate-Limit
-  * Swagger
-  * Módulo FS<br><br>
-
-      
-  ## Como Rodar
-      
-  ### 1 Clonar no seu computador (via SSH)
-  No terminal:
-  
-    git clone git@github.com:IgorMarinhoArgollo/talker-manager.git
-    
-  ### 2 Crie o arquivo .env na pasta talker-manager
-  Chaves que devem ser inseridas:
-  
-    PORT=3000
-
-  ### 3 Opções para rodar
-  ### 3.1 Rodar Localmente
-  #### Requisitos:
-   * node.js
-  
-  #### Intalanção do projeto:
-  No terminal:
+  ###### Instalando as dependências / Installing dependencies:
+  No terminal / On terminal:
   
     npm install
 
-  #### Iniciando o projeto localmente
-  No terminal:
+  ###### Inicializando / Starting
+  No terminal / On terminal:
   
     npm run dev
-      
-      
-  ### 3.2 Rodar no Container
-  #### Requisitos:
+
+  <br />
+  
+  ##### 3.2 Rodando no Container / Running on Container
+  ###### Requisitos / Requirements:
    * Docker
    * Docker-compose
   
-  #### Iniciando o projeto localmente
-  no terminal:
+  ###### Inicializando / Starting
+  No terminal / On terminal:
   
     docker-compose up
 
+<br/>
 
-  ## Rotas
-  Vide detalhes na documentação disponível na rota: 
-  
-  * GET /api-docs
-  ------------------------
-  * POST /login
-  * GET /talker
-  * GET /talker/:id
-  * GET /talker/search?q=
-  * POST /talker
-  * PUT /talker/:id
-  * DELETE /talker/:id
-  
-    
-  ## Como contribuir no projeto
-  1. Faça um **fork** do projeto;
-  2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`;
-  3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`;
-  4. Envie as suas alterações: `git push origin my-feature`;
-  5. Abra o seu pull-request na página do GitHub.<br><br>
-
-  ##  Autor
+### :technologist: Author / Autor
 <a href="https://www.linkedin.com/in/igormarinhoargollo/">
  <img style="border-radius:300px;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/>
  <br />
  <sub><b>Igor Marinho Argollo</b></sub></a> <a href="https://www.linkedin.com/in/igormarinhoargollo/"></a>
- <br><br>
+ <br /> <br />
 
-  ## Licença
-  Esse projeto está sob a licença:
+ 
+  ### :page_facing_up: Licença / License
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"><br><br>
   
