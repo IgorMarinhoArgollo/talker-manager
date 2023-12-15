@@ -11,6 +11,9 @@ const swaggerDocs = require('./swagger.json');
 
 const errorMiddleware = require('./middlewares/error');
 
+// to fix Swagger UI interface on vercel
+const CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+
 const app = express();
 app.use(helmet());
 app.use(limiter);
@@ -19,7 +22,7 @@ app.use(express.json());
 app.use('/login', rescue(loginRouter));
 app.use('/talker', rescue(talkerRouter));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { customCssUrl: CSS_URL }));
 
 app.use(errorMiddleware);
 
