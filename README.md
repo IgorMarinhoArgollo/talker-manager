@@ -22,8 +22,8 @@ The Talker Manager Project is the backend portion of a speaker manager developed
 <br/>
   
 ### :earth_americas: Links
-<a href="https://talker-manager-nles.onrender.com">Base</a><br>
-<a href="https://talker-manager-nles.onrender.com/api-docs">Docs</a><br><br>
+<a href="https://talker-manager-one.vercel.app/">Base</a><br>
+<a href="https://talker-manager-one.vercel.app/api-docs/">Docs</a><br><br>
 
 ### Rotas / Routes
 ![Routes](./assets/rotas.png)
